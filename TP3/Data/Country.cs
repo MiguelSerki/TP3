@@ -17,6 +17,7 @@ namespace Data
 
         List<Employee> EmployeeList { get; set; }
 
+        [Key]
         [Required]
         public string CountryName { get; set; }
     }
