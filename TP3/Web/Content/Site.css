@@ -1,12 +1,16 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    color: white;
+    background-color: darkblue;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    color: white;
+    background-color: darkblue;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +25,14 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#CancelButton {
+    background-color: white;
+    color: black;
+}
+
+#EditButton {
+    background-color: blue;
+    color: white;
 }

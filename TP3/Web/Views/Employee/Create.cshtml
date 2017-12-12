@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<form action="/Create" method="post">
+    <h3>Nombre</h3>
+    <input type="text" name="FirstName" value="" />
+
+    <h3>Apellido</h3>
+    <input type="text" name="LastName" value="" />
+
+    <h3>Pais</h3>
+    <input type="text" name="Country" value="" />
+
+    <h3>Fecha de incorporacion</h3>
+    <input type="date" name="HireDate" value="" />
+
+    <h3>Turno</h3> //Cambiar el radio
+    <div class="radio"> 
+        <label><input type="radio" name="optradio">Option 1</label>
+    </div>
+    <div class="radio">
+        <label><input type="radio" name="optradio">Option 2</label>
+    </div>
+    <div class="radio disabled">
+        <label><input type="radio" name="optradio" disabled>Option 3</label>
+    </div>
+    <button type="submit" class="btn-default">Confirmar</button>
+</form>
