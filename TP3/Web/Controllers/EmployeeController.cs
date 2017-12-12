@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Services.DTO;
 
 namespace Web.Controllers
 {
@@ -50,7 +51,7 @@ namespace Web.Controllers
 
         // POST: Employee/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, EmployeeDTO employee)
         {
             try
             {
@@ -72,7 +73,7 @@ namespace Web.Controllers
 
         // POST: Employee/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, EmployeeDTO employee)
         {
             try
             {

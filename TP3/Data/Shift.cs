@@ -15,6 +15,7 @@ namespace Data
         [Required]
         public DateTimeKind Finish { get; set; }
 
+        [Required]
         public List<Employee> EmployeeList { get; set; }
     }
 }
