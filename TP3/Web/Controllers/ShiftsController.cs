@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Services;
 
 namespace Web.Controllers
 {
@@ -11,7 +12,9 @@ namespace Web.Controllers
         // GET: Shifts
         public ActionResult Index()
         {
-            return View();
+            var services = new ShiftServices ();
+            var ShiftList = services.GetShifts();
+            return View(ShiftList); //preguntar a Kevin del futuro.
         }
 
         // GET: Shifts/Details/5
