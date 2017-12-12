@@ -1,9 +1,20 @@
-﻿namespace Data
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace Data
 {
-    public enum Shift
+    public class Shift
     {
-        Morning,
-        Afternoon,
-        Night
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public DateTimeKind Start { get; set; }
+
+        [Required]
+        public DateTimeKind Finish { get; set; }
+
+        public List<Employee> EmployeeList { get; set; }
     }
 }

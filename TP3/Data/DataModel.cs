@@ -18,7 +18,8 @@ namespace Data
         }
 
         public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Country> Countrys { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<Shift> Shifts { get; set; }
      
     }
 }
