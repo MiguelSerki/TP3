@@ -1,0 +1,25 @@
+﻿@model List<Services.EmploteeDTO> //Miguel del futuro! checkea el namespace
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Pais</th>
+        <th>Fecha de ingreso</th>
+        <th>Turno</th>
+    </tr>
+    @foreach (var item in Model) //fijate el turno y la fecha de ingreso
+    {
+        <tr>
+            <td>item.FirstName</td>
+            <td>item.LastName</td>
+            <td>item.Country</td>
+            <td>item.Fechadeingreso</td>
+            <td>item.Shift</td>
+        </tr>
+    }
+</table>
