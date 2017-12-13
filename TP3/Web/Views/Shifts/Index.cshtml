@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Services.DTO.ShiftDTO>
 @{
     ViewBag.Title = "Index";
 }
@@ -13,9 +13,10 @@
     <div class="form-group">
         <label for="sel1">Select list:</label>
         <select class="form-control" id="sel1">
-            <option>Turno Mañana</option>
-            <option>Turno Tarde</option>
-            <option>Turno Noche</option>
+            @foreach (var shift in Model)
+            {
+                <option>@shift.Name</option>
+            }
         </select>
     </div>
 </body>

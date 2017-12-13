@@ -12,9 +12,9 @@ namespace Web.Controllers
         // GET: Shifts
         public ActionResult Index()
         {
-            var services = new ShiftServices ();
-            var ShiftList = services.GetShifts();
-            return View(ShiftList); //preguntar a Kevin del futuro.
+            var services = new ShiftServices();
+            var ShiftList = services.GetShifts(); // refactor para que no llame a todo junto.
+            return View(ShiftList);
         }
 
         // GET: Shifts/Details/5
