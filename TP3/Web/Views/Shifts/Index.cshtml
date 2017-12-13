@@ -10,14 +10,19 @@
     <title>Registro de Horarios</title>
 </head>
 <body>
-    <div class="form-group">
-        <label for="sel1">Select list:</label>
-        <select class="form-control" id="sel1">
-            @foreach (var shift in Model)
-            {
-                <option>@shift.Name</option>
-            }
-        </select>
-    </div>
+    <form action="/ShiftMenu" method="post">
+        <div class="form-group">
+            <label for="sel1">Select list:</label>
+            <select class="form-control" id="sel1">
+                @foreach (var shift in Model)
+        {
+            <option>@shift.Name</option>
+}
+            </select>
+
+            <button type="submit">Mostrar empleados</button>
+        </div>
+    </form>
+    
 </body>
 </html>

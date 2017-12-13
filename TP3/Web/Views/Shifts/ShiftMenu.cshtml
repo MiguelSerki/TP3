@@ -1,0 +1,31 @@
+﻿@model Services.DTO.ShiftDTO
+@{
+    ViewBag.Title = "ShiftView";
+}
+
+<h2>ShiftView</h2>
+
+<div>
+    <hi>@Model.Name</hi>
+    <h2>@Model.Start</h2>
+    <h2>@Model.Finish</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Pais</th>
+            <th>Fecha de contratacion</th>
+        </tr>
+        @foreach (var item in Model.EmployeeList)
+        {
+            <tr>
+                <td>@item.EmployeeID</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Country</td>
+                <td>@item.HireDate</td>
+            </tr>
+        }
+    </table>
+</div>

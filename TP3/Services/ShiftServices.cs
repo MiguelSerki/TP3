@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using Data;
+using Data;
 using Services.DTO;
 using Services;
 
@@ -26,7 +26,6 @@ namespace Services
                     Name = item.Name,
                     Start = item.Start,
                     Finish = item.Finish,
-                    EmployeeList = this.GetEmployeeDTOFromShiftList(item.EmployeeList)
                 });
             }
 
@@ -38,12 +37,32 @@ namespace Services
             return new ShiftDTO();
         }
 
-        public ShiftDTO GetShiftByName(string name)
+        public ShiftDTO GetShiftByID(int Id)
         {
-            var shift = this.ShiftRepo.Set().Select(c=> c.Name == name).FirstOrDefault;
-
+            try
+            {
+            var shift = this.ShiftRepo.Set().Where(c => c.Id == Id).FirstOrDefault();
+            return this.MapShiftDTO(shift);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("No se reconocio el ID");
+                return null;
+            }
         }
 
+        public ShiftDTO MapShiftDTO(Shift shift)
+        {
+            return new ShiftDTO
+            {
+                Id = shift.Id,
+                Name = shift.Name,
+                Start = shift.Start,
+                Finish = shift.Finish,
+                EmployeeList = this.GetEmployeeDTOFromShiftList(shift.EmployeeList)
+            };
+        }
+            
         //Toma una lista de empleados y los mapea a una lista de EmployeeDTO
         public List<EmployeeDTO> GetEmployeeDTOFromShiftList(List<Employee> list)
         {
