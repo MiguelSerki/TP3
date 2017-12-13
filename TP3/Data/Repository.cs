@@ -26,7 +26,7 @@ namespace Data
                 context.Set<T>().Remove(entity);
             }
 
-            public T Update(T entity)
+        public T Update(T entity)
             {
                 context.Entry<T>(entity).State = EntityState.Modified; ;
                 return entity;

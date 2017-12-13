@@ -8,5 +8,9 @@ namespace Services.DTO
 {
     public class CountryDTO
     {
+        List<EmployeeDTO> EmployeeList { get; set; }
+
+        public string CountryName { get; set; }
+
     }
 }
