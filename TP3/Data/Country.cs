@@ -9,14 +9,6 @@ namespace Data
 {
     public class Country
     {
-
-        public Country()
-        {
-            this.EmployeeList = new List<Employee>();
-        }
-
-        List<Employee> EmployeeList { get; set; }
-
         [Key]
         [Required]
         public string CountryName { get; set; }

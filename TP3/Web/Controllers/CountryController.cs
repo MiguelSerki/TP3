@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Services;
 
 namespace Web.Controllers
 {
     public class CountryController : Controller
     {
+        private CountryServices services = new CountryServices();
+
         // GET: Country
         public ActionResult Index()
         {
-            return View();
-        }
+            var countries = services.ListAll();
+            return View(countries);
+        }-+
 
         // GET: Country/Details/5
         public ActionResult Details(int id)

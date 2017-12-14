@@ -1,0 +1,23 @@
+﻿@model List<Services.DTO.CountryDTO>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Menu de paises</title>
+</head>
+<body>
+    <table class="panel-group">
+        <tr>
+            <th>Nombre</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>@item.CountryName</tr>
+        }
+    </table>
+</body>
+</html>
