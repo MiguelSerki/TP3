@@ -8,7 +8,7 @@ namespace Services
 {
     interface ICrud<T> where T :class
     {
-        T Create();
+        void Create(T entity);
 
         void Read(T entity);
 

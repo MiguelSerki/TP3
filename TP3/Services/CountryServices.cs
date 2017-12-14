@@ -13,9 +13,14 @@ namespace Services
         private Repository<Country> CountryRepo = new Repository<Country>();
 
 
-        public CountryDTO Create()
+        public void Create(CountryDTO entity)
         {
-            return new CountryDTO();
+            var country = new Country
+            {
+                CountryName = entity.CountryName
+            };
+            this.CountryRepo.Persist(country);
+            this.CountryRepo.SaveChanges();
         }
 
         public void Delete(CountryDTO entity)

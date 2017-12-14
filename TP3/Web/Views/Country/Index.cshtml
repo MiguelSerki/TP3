@@ -4,7 +4,13 @@
 }
 
 <h2>Index</h2>
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+</body>
+</html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Menu de paises</title>
@@ -16,8 +22,16 @@
         </tr>
         @foreach (var item in Model)
         {
-            <tr>@item.CountryName</tr>
+            <tr>
+                <td>
+                    @item.CountryName
+                </td>
+            </tr>
         }
     </table>
+    <form class="form-group" action="/Create">
+        <input type="text" name="CountryName" />
+        <button type="submit" name="" class="success">Crear Nuevo Pais</button>
+    </form>
 </body>
 </html>

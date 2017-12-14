@@ -49,7 +49,6 @@
     <Compile Include="DTO\CountryDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
     <Compile Include="DTO\ShiftDTO.cs" />
-    <Compile Include="EmployeeServices.cs" />
     <Compile Include="ICrud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

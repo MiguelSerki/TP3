@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Services;
+using Services.DTO;
 
 namespace Web.Controllers
 {
@@ -16,7 +17,7 @@ namespace Web.Controllers
         {
             var countries = services.ListAll();
             return View(countries);
-        }-+
+        }
 
         // GET: Country/Details/5
         public ActionResult Details(int id)
@@ -32,12 +33,11 @@ namespace Web.Controllers
 
         // POST: Country/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(CountryDTO country)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                this.services.Create(country); 
                 return RedirectToAction("Index");
             }
             catch
