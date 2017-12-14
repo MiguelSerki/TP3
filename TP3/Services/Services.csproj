@@ -45,10 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountryServices.cs" />
     <Compile Include="DTO\CountryDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
     <Compile Include="DTO\ShiftDTO.cs" />
+<<<<<<< HEAD
     <Compile Include="EmployeesServices.cs" />
+=======
+    <Compile Include="EmployeeServices.cs" />
+    <Compile Include="ICrud.cs" />
+>>>>>>> e50480c636febe142e649d5e89da8a4d38ed5e8f
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
