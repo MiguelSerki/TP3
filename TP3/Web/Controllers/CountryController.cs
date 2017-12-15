@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Services;
+using Services.DTO;
 
 namespace Web.Controllers
 {
     public class CountryController : Controller
     {
+        private CountryServices services = new CountryServices();
+
         // GET: Country
         public ActionResult Index()
         {
-            return View();
+            var countries = services.ListAll();
+            return View(countries);
         }
 
         // GET: Country/Details/5
@@ -28,12 +33,11 @@ namespace Web.Controllers
 
         // POST: Country/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(CountryDTO country)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                this.services.Create(country); 
                 return RedirectToAction("Index");
             }
             catch
@@ -43,22 +47,22 @@ namespace Web.Controllers
         }
 
         // GET: Country/Edit/5
-        public ActionResult Edit(int id)
+        [HttpGet]
+        public ActionResult Edit(string name)
         {
+            ViewBag.name = name;
             return View();
         }
 
         // POST: Country/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(string country, string name)
         {
             try
             {
-                // TODO: Add update logic here
-
+                this.services.Update(country, name);
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception e)
             {
                 return View();
             }
@@ -72,12 +76,11 @@ namespace Web.Controllers
 
         // POST: Country/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(string country)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                this.services.Delete(this.services.CreateFromString(country));
                 return RedirectToAction("Index");
             }
             catch
