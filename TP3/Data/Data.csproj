@@ -71,6 +71,7 @@
     <Compile Include="Migrations\201712151636022_FourthPointTwo.cs" />
     <Compile Include="Migrations\201712151636022_FourthPointTwo.Designer.cs">
       <DependentUpon>201712151636022_FourthPointTwo.cs</DependentUpon>
+    </Compile>
        <Compile Include="Migrations\201712151535481_Fifth.cs" />
     <Compile Include="Migrations\201712151535481_Fifth.Designer.cs">
       <DependentUpon>201712151535481_Fifth.cs</DependentUpon>
@@ -99,6 +100,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712151636022_FourthPointTwo.resx">
       <DependentUpon>201712151636022_FourthPointTwo.cs</DependentUpon>
+    </EmbeddedResource>
           <EmbeddedResource Include="Migrations\201712151535481_Fifth.resx">
       <DependentUpon>201712151535481_Fifth.cs</DependentUpon>
     </EmbeddedResource>
