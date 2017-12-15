@@ -73,7 +73,7 @@ namespace Services
         public void Delete(EmployeeDTO dto)
 
         {
-            var employee = _EmployeeRepository.Set().FirstOrDefault(x => x.EmployeeID == dto.EmployeeID):
+            var employee = _EmployeeRepository.Set().FirstOrDefault(x => x.EmployeeID == dto.EmployeeID);
 
             if(employee==null)
 

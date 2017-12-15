@@ -15,5 +15,6 @@ namespace Services.DTO
         public Shift Shift { get; set; }
         public string Country { get; set; }
         public DateTime? HireDate { get; set; }
-        
+
+    }
 }
