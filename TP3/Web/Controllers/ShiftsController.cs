@@ -24,7 +24,9 @@ namespace Web.Controllers
         public ActionResult ShiftMenu(int ID)
         {
             var shift = this.services.GetShiftByID(ID);
-            return View(shift);
+            if (shift.EmployeeList.Any())
+                return View(shift);
+            return RedirectToAction("Index");
         }
     }
 }
