@@ -212,6 +212,8 @@
     <Content Include="Views\Shifts.cshtml" />
     <Content Include="Views\Employee\Details.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Shifts\Index.cshtml" />
+    <Content Include="Views\Shifts\ShiftMenu.cshtml" />
     <Content Include="Views\Country\Index.cshtml" />
     <Content Include="Views\Country\Create.cshtml" />
     <Content Include="Views\Country\Edit.cshtml" />
@@ -219,6 +221,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Country\" />
     <Folder Include="Views\Shifts\" />
   </ItemGroup>
   <ItemGroup>

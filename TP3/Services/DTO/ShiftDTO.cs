@@ -8,5 +8,14 @@ namespace Services.DTO
 {
     public class ShiftDTO
     {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public DateTimeKind Start { get; set; }
+
+        public DateTimeKind Finish { get; set; }
+
+        public List<EmployeeDTO> EmployeeList { get; set; }
     }
 }

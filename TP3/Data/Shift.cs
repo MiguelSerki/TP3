@@ -10,6 +10,9 @@ namespace Data
         public int Id { get; set; }
 
         [Required]
+        public string Name { get; set; }
+
+        [Required]
         public DateTimeKind Start { get; set; }
 
         [Required]

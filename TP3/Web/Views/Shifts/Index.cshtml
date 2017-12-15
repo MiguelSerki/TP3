@@ -1,0 +1,27 @@
+﻿@model List<Services.DTO.ShiftDTO>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Registro de Horarios</title>
+</head>
+<body>
+    <form action="/Shifts/ShiftMenu" method="post">
+        <div class="form-group">
+            <label for="sel1">Select list:</label>
+            <select name="ID" class="form-control" id="sel1">
+                @foreach (var shift in Model)
+                {
+                    <option value="@shift.Id">@shift.Name</option>
+                }
+            </select>
+
+            <button type="submit">Mostrar empleados</button>
+        </div>
+    </form>
+</body>
+</html>
