@@ -47,22 +47,22 @@ namespace Web.Controllers
         }
 
         // GET: Country/Edit/5
-        public ActionResult Edit(int id)
+        [HttpGet]
+        public ActionResult Edit(string name)
         {
+            ViewBag.name = name;
             return View();
         }
 
         // POST: Country/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(string country, string name)
         {
             try
             {
-                // TODO: Add update logic here
-
+                this.services.Update(country, name);
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception e)
             {
                 return View();
             }
@@ -76,12 +76,11 @@ namespace Web.Controllers
 
         // POST: Country/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(string country)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                this.services.Delete(this.services.CreateFromString(country));
                 return RedirectToAction("Index");
             }
             catch

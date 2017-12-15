@@ -3,15 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
-</body>
-</html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <title>Menu de paises</title>
 </head>
@@ -26,12 +18,22 @@
                 <td>
                     @item.CountryName
                 </td>
+                <td>
+                    <form action="/Country/Edit">
+                        <button class="btn btn-group" value="@item.CountryName" name="name" type="submit">Actualizar</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/Country/Delete" method="post">
+                        <button class="btn btn-group" value="@item.CountryName" name="country" type="submit">Borrar</button>
+                    </form>
+                </td>
             </tr>
         }
     </table>
-    <form class="form-group" action="/Create">
+    <form class="form-group" method="post" action="/Country/Create">
         <input type="text" name="CountryName" />
-        <button type="submit" name="" class="success">Crear Nuevo Pais</button>
+        <button type="submit" class="success">Crear Nuevo Pais</button>
     </form>
 </body>
 </html>

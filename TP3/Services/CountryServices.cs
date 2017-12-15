@@ -8,10 +8,9 @@ using Data;
 
 namespace Services
 {
-    public class CountryServices : ICrud<CountryDTO>
+    public class CountryServices
     {
         private Repository<Country> CountryRepo = new Repository<Country>();
-
 
         public void Create(CountryDTO entity)
         {
@@ -21,6 +20,14 @@ namespace Services
             };
             this.CountryRepo.Persist(country);
             this.CountryRepo.SaveChanges();
+        }
+
+        public CountryDTO CreateFromString(string name)
+        {
+            return new CountryDTO()
+            {
+                CountryName = name
+            };
         }
 
         public void Delete(CountryDTO entity)
@@ -63,11 +70,10 @@ namespace Services
            
         }
 
-        public void Update(CountryDTO entity)
+        public void Update(string entity, string name)
         {
-            var country = this.CountryRepo.Set().Where(c => c.CountryName == entity.CountryName).FirstOrDefault();
-
-            country.CountryName = entity.CountryName;
+            var country = this.CountryRepo.Set().Where(c => c.CountryName == name).FirstOrDefault();
+            country.CountryName = entity;
             this.CountryRepo.Update(country);
             this.CountryRepo.SaveChanges();
         }
