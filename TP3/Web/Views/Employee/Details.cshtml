@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+﻿
+@model IEnumerable<Services.DTO.EmployeeDTO>
+
+
+<h2>Detalles de Empleado:</h2>
+<table class="table">
+   
+=======
 ﻿@model List<Services.DTO.EmployeeDTO> //Miguel del futuro! checkea el namespace
 @{
     ViewBag.Title = "Details";
@@ -5,15 +14,32 @@
 
 <h2>Details</h2>
 <table class="form-group">
+>>>>>>> 4a577045b4508245c184983a09f489026d6daa84
     <tr>
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Pais</th>
         <th>Fecha de ingreso</th>
         <th>Turno</th>
+        <th>Valor de Hora</th>
     </tr>
-    @foreach (var item in Model) //fijate el turno y la fecha de ingreso
+    @foreach (var item in this.Model)
     {
+<<<<<<< HEAD
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Country</td>
+            <td>@item.HireDate</td>
+            <td>@item.Shift</td>
+            <td>@item.ValorHora</td>
+            <td>
+                <a href="/Employee/delete?EmployeeID=@item.EmployeeID">Eliminar</a>
+                <a href="/Employee/update?EmployeeID=@item.EmployeeID">Actualizar</a>
+            </td>
+        </tr>
+
+=======
     <tr>
         <td>item.FirstName</td>
         <td>item.LastName</td>
@@ -23,5 +49,6 @@
         <td><form action="/Employee/Edit" method="post"><button type="submit" value="@item.EmployeeID" id="edit" class="form-group">Editar</button></form></td>
         <td><form action="/Employee/Delete" method="post"><button type="submit" value="@item.EmployeeID" id="delete" class="form-group">Borrar</button></form></td>
     </tr>
+>>>>>>> 4a577045b4508245c184983a09f489026d6daa84
     }
 </table>

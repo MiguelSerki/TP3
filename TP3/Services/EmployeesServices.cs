@@ -8,7 +8,11 @@ using Services.DTO;
 
 namespace Services
 {
+<<<<<<< HEAD
+   public class EmployeesServices
+=======
     public class EmployeesServices
+>>>>>>> 4a577045b4508245c184983a09f489026d6daa84
     {
         private Repository<Employee> _EmployeeRepository;
 
@@ -25,9 +29,35 @@ namespace Services
                 FirstName = c.FirstName,
                 LastName = c.LastName,
                 Country = c.Country,
+<<<<<<< HEAD
+                Shift = c.Shift,
+                ValorHora = c.ValorHora
+                
+=======
                 ShiftID = c.Shift
+>>>>>>> 4a577045b4508245c184983a09f489026d6daa84
             });
             }
+
+        public EmployeeDTO Find(int employeeID)
+        {
+            var aux = _EmployeeRepository.Set().Select(c => new EmployeeDTO
+
+            {
+                EmployeeID = c.EmployeeID,
+                FirstName = c.FirstName,
+                LastName = c.LastName,
+                Country = c.Country,
+                Shift = c.Shift,
+                ValorHora = c.ValorHora
+
+
+            }).FirstOrDefault(x => x.EmployeeID == employeeID);
+
+            return aux;
+            
+            
+        }
 
         public void Create(EmployeeDTO dto)
         {
@@ -39,7 +69,7 @@ namespace Services
                 Shift = dto.ShiftID,
                 Country = dto.Country,
                 HireDate = dto.HireDate,
-                Salary = dto.Salary
+                ValorHora = dto.ValorHora
             });
 
             _EmployeeRepository.SaveChanges();
@@ -47,7 +77,9 @@ namespace Services
 
         public void Update(EmployeeDTO dto)
         {
+
             var employee = _EmployeeRepository.Set().FirstOrDefault(x => x.EmployeeID == dto.EmployeeID);
+            
             if(employee == null)
             {
                 throw new Exception("El empleado a actualizar no existe");
@@ -60,7 +92,8 @@ namespace Services
             employee.Country = dto.Country;
             employee.Shift = dto.ShiftID;
             employee.HireDate = dto.HireDate;
-            employee.Salary = dto.Salary;
+            employee.ValorHora = dto.ValorHora;
+            
 
             _EmployeeRepository.Update(employee);
             _EmployeeRepository.SaveChanges();
@@ -102,8 +135,7 @@ namespace Services
                         FirstName = item.FirstName,
                         LastName = item.LastName,
                         Country = item.Country,
-                        ShiftID = item.Shift,
-                        Salary = item.Salary
+                        ShiftID = item.Shift
                     });
                 }
                 return listDTO;

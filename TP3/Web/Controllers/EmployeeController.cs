@@ -4,87 +4,73 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Services.DTO;
+using Services;
 
 namespace Web.Controllers
 {
     public class EmployeeController : Controller
     {
-        // GET: Employee
-        public ActionResult Index()
+        private EmployeesServices _EmployeesServices;
+
+        public EmployeeController()
         {
-            return View();
+            _EmployeesServices = new EmployeesServices();
+        }
+           
+        
+        
+
+        
+        public ActionResult Details()
+        {
+            return View(_EmployeesServices.GetAll());
         }
 
-        // GET: Employee/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Employee/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Employee/Create
         [HttpPost]
-        public ActionResult Create(EmployeeDTO employee)//chekear nombre de DTO
-        {
-            try
-            {
-                // TODO: Add insert logic here
+        public ActionResult Create(EmployeeDTO employee)
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+        {
+            _EmployeesServices.Create(employee);
+            return View("Details", _EmployeesServices.GetAll());
+
         }
 
-        // GET: Employee/Edit/5
-        public ActionResult Edit(int id)
+
+        //Problemas al devolver employee(Devuelve ID valor 0). solucionar.
+        public ActionResult Update(int EmployeeID)
         {
-            return View();
+            var EmployeeDto = _EmployeesServices.Find(EmployeeID);
+            return View("Update", EmployeeDto);
         }
 
-        // POST: Employee/Edit/5
+        
         [HttpPost]
-        public ActionResult Edit(int id, EmployeeDTO employee)
+        public ActionResult Update(EmployeeDTO employee)
         {
-            try
-            {
-                // TODO: Add update logic here
+            
+                
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+              _EmployeesServices.Update(employee);
+                return View("Details", _EmployeesServices.GetAll());
+            
         }
 
-        // GET: Employee/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
-        // POST: Employee/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, EmployeeDTO employee)
-        {
-            try
-            {
-                // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
+
+        //Listo
+        public ActionResult Delete(int EmployeeID)
+        {
+            _EmployeesServices.Delete(new EmployeeDTO
             {
-                return View();
-            }
+                EmployeeID = EmployeeID
+            });
+            return View("Details", _EmployeesServices.GetAll());
         }
     }
 }
