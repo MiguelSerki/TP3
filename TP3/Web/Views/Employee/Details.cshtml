@@ -1,10 +1,10 @@
-﻿@model List<Services.EmploteeDTO> //Miguel del futuro! checkea el namespace
+﻿@model List<Services.DTO.EmployeeDTO> //Miguel del futuro! checkea el namespace
 @{
     ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
-<table>
+<table class="form-group">
     <tr>
         <th>Nombre</th>
         <th>Apellido</th>
@@ -14,12 +14,14 @@
     </tr>
     @foreach (var item in Model) //fijate el turno y la fecha de ingreso
     {
-        <tr>
-            <td>item.FirstName</td>
-            <td>item.LastName</td>
-            <td>item.Country</td>
-            <td>item.Fechadeingreso</td>
-            <td>item.Shift</td>
-        </tr>
+    <tr>
+        <td>item.FirstName</td>
+        <td>item.LastName</td>
+        <td>item.Country</td>
+        <td>item.Fechadeingreso</td>
+        <td>item.Shift</td>
+        <td><form action="/Employee/Edit" method="post"><button type="submit" value="@item.EmployeeID" id="edit" class="form-group">Editar</button></form></td>
+        <td><form action="/Employee/Delete" method="post"><button type="submit" value="@item.EmployeeID" id="delete" class="form-group">Borrar</button></form></td>
+    </tr>
     }
 </table>

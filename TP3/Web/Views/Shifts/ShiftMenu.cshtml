@@ -1,4 +1,4 @@
-﻿@model Services.DTO.ShiftDTO
+﻿@model List<Services.DTO.EmployeeDTO>
 @{
     ViewBag.Title = "ShiftView";
 }
@@ -6,10 +6,8 @@
 <h2>ShiftView</h2>
 
 <div>
-    <hi>@Model.Name</hi>
-    <h2>@Model.Start</h2>
-    <h2>@Model.Finish</h2>
-    <table>
+    <tag>Lista de empleados</tag>
+    <table class="form-group" >
         <tr>
             <th>ID</th>
             <th>Nombre</th>
@@ -17,15 +15,17 @@
             <th>Pais</th>
             <th>Fecha de contratacion</th>
         </tr>
-        @foreach (var item in Model.EmployeeList)
+        @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.EmployeeID</td>
-                <td>@item.FirstName</td>
-                <td>@item.LastName</td>
-                <td>@item.Country</td>
-                <td>@item.HireDate</td>
-            </tr>
+        <tr>
+            <td>@item.EmployeeID</td>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Country</td>
+            <td>@item.HireDate</td>
+            <td></td>
+        </tr>
+        //Cuando Agustin termine la web de empleados fijate si anda miguel del futuro
         }
     </table>
 </div>

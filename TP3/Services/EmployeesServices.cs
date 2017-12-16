@@ -8,7 +8,7 @@ using Services.DTO;
 
 namespace Services
 {
-    class EmployeesServices
+    public class EmployeesServices
     {
         private Repository<Employee> _EmployeeRepository;
 
@@ -25,7 +25,7 @@ namespace Services
                 FirstName = c.FirstName,
                 LastName = c.LastName,
                 Country = c.Country,
-                Shift = c.Shift
+                ShiftID = c.Shift
             });
             }
 
@@ -36,7 +36,7 @@ namespace Services
                 EmployeeID = dto.EmployeeID,
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
-                Shift = dto.Shift,
+                Shift = dto.ShiftID,
                 Country = dto.Country,
                 HireDate = dto.HireDate
             });
@@ -44,7 +44,6 @@ namespace Services
             _EmployeeRepository.SaveChanges();
         }
 
-            
         public void Update(EmployeeDTO dto)
         {
             var employee = _EmployeeRepository.Set().FirstOrDefault(x => x.EmployeeID == dto.EmployeeID);
@@ -58,7 +57,7 @@ namespace Services
             employee.FirstName = dto.FirstName;
             employee.LastName = dto.LastName;
             employee.Country = dto.Country;
-            employee.Shift = dto.Shift;
+            employee.Shift = dto.ShiftID;
             employee.HireDate = dto.HireDate;
             
 
@@ -87,14 +86,32 @@ namespace Services
 
         }
 
+        public List<EmployeeDTO> GetAllFromShift(int id)
+        {
+
+           var list =  this._EmployeeRepository.Set().Where(c => c.Shift == id).ToList();
+            var listDTO = new List<EmployeeDTO>();
+            try
+            {
+                foreach (var item in list)
+                {
+                    listDTO.Add(new EmployeeDTO
+                    {
+                        EmployeeID = item.EmployeeID,
+                        FirstName = item.FirstName,
+                        LastName = item.LastName,
+                        Country = item.Country,
+                        ShiftID = item.Shift
+                    });
+                }
+                return listDTO;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
            
-            
-                
-            
-        
-        
-
-
-
+        }
+           
     }
 }

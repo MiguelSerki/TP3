@@ -19,7 +19,7 @@ namespace Data
         public int EmployeeID { get; set; }
 
         [Required]
-        public Shift Shift { get; set; }
+        public int Shift { get; set; }
 
         [Required]
         [StringLength(50)]

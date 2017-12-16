@@ -62,7 +62,7 @@ namespace Web.Controllers
                 this.services.Update(country, name);
                 return RedirectToAction("Index");
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return View();
             }

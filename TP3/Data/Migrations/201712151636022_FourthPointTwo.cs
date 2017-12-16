@@ -8,7 +8,7 @@ namespace Data.Migrations
         public override void Up()
         {
             DropPrimaryKey("dbo.Countries");
-            AddColumn("dbo.Shifts", "Name", c => c.String(nullable: false));
+            AlterColumn("dbo.Shifts", "Name", c => c.String(nullable: false));
             AlterColumn("dbo.Countries", "CountryName", c => c.String(nullable: false, maxLength: 128));
             AddPrimaryKey("dbo.Countries", "CountryName");
             DropColumn("dbo.Countries", "Id");

@@ -64,7 +64,7 @@
     <Compile Include="Migrations\201712131537416_Third.Designer.cs">
       <DependentUpon>201712131537416_Third.cs</DependentUpon>
     </Compile>
-        <Compile Include="Migrations\201712141507319_Fourth.cs" />
+    <Compile Include="Migrations\201712141507319_Fourth.cs" />
     <Compile Include="Migrations\201712141507319_Fourth.Designer.cs">
       <DependentUpon>201712141507319_Fourth.cs</DependentUpon>
     </Compile>
@@ -72,9 +72,13 @@
     <Compile Include="Migrations\201712151636022_FourthPointTwo.Designer.cs">
       <DependentUpon>201712151636022_FourthPointTwo.cs</DependentUpon>
     </Compile>
-       <Compile Include="Migrations\201712151535481_Fifth.cs" />
+    <Compile Include="Migrations\201712151535481_Fifth.cs" />
     <Compile Include="Migrations\201712151535481_Fifth.Designer.cs">
       <DependentUpon>201712151535481_Fifth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712152240245_Sixth.cs" />
+    <Compile Include="Migrations\201712152240245_Sixth.Designer.cs">
+      <DependentUpon>201712152240245_Sixth.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,14 +99,17 @@
     <EmbeddedResource Include="Migrations\201712131537416_Third.resx">
       <DependentUpon>201712131537416_Third.cs</DependentUpon>
     </EmbeddedResource>
-        <EmbeddedResource Include="Migrations\201712141507319_Fourth.resx">
+    <EmbeddedResource Include="Migrations\201712141507319_Fourth.resx">
       <DependentUpon>201712141507319_Fourth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712151636022_FourthPointTwo.resx">
       <DependentUpon>201712151636022_FourthPointTwo.cs</DependentUpon>
     </EmbeddedResource>
-          <EmbeddedResource Include="Migrations\201712151535481_Fifth.resx">
+    <EmbeddedResource Include="Migrations\201712151535481_Fifth.resx">
       <DependentUpon>201712151535481_Fifth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712152240245_Sixth.resx">
+      <DependentUpon>201712152240245_Sixth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

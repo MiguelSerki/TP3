@@ -78,7 +78,7 @@ namespace Services
                         EmployeeID = employee.EmployeeID,
                         Country = employee.Country,
                         HireDate = employee.HireDate,
-                        ShiftID = employee.Shift.Id
+                        ShiftID = employee.Shift
                     });
                 }
             }
