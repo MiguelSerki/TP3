@@ -11,10 +11,6 @@ namespace Data
 
         
     {
-        public Employee()
-        {
-        }
-
         [Key]
         public int EmployeeID { get; set; }
 
@@ -34,5 +30,7 @@ namespace Data
 
         public DateTime? HireDate { get; set; }
 
+        [Required]
+        public decimal Salary { get; set; }
     }
 }

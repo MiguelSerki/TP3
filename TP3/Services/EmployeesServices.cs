@@ -38,7 +38,8 @@ namespace Services
                 LastName = dto.LastName,
                 Shift = dto.ShiftID,
                 Country = dto.Country,
-                HireDate = dto.HireDate
+                HireDate = dto.HireDate,
+                Salary = dto.Salary
             });
 
             _EmployeeRepository.SaveChanges();
@@ -59,7 +60,7 @@ namespace Services
             employee.Country = dto.Country;
             employee.Shift = dto.ShiftID;
             employee.HireDate = dto.HireDate;
-            
+            employee.Salary = dto.Salary;
 
             _EmployeeRepository.Update(employee);
             _EmployeeRepository.SaveChanges();
@@ -101,7 +102,8 @@ namespace Services
                         FirstName = item.FirstName,
                         LastName = item.LastName,
                         Country = item.Country,
-                        ShiftID = item.Shift
+                        ShiftID = item.Shift,
+                        Salary = item.Salary
                     });
                 }
                 return listDTO;

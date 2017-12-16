@@ -21,5 +21,7 @@ namespace Services.DTO
 
         public DateTime? HireDate { get; set; }
 
+        public decimal Salary { get; set; }
+
     }
 }

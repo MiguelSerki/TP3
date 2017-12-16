@@ -80,10 +80,16 @@
     <Compile Include="Migrations\201712152240245_Sixth.Designer.cs">
       <DependentUpon>201712152240245_Sixth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712162154379_Seventh.cs" />
+    <Compile Include="Migrations\201712162154379_Seventh.Designer.cs">
+      <DependentUpon>201712162154379_Seventh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Shift.cs" />
+    <Compile Include="WorkingDay.cs" />
+    <Compile Include="WorkingMonth.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712152240245_Sixth.resx">
       <DependentUpon>201712152240245_Sixth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712162154379_Seventh.resx">
+      <DependentUpon>201712162154379_Seventh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
