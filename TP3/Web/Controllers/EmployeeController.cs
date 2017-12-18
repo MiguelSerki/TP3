@@ -17,10 +17,6 @@ namespace Web.Controllers
             _EmployeesServices = new EmployeesServices();
         }
            
-        
-        
-
-        
         public ActionResult Details()
         {
             return View(_EmployeesServices.GetAll());

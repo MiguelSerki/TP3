@@ -8,11 +8,8 @@ using Services.DTO;
 
 namespace Services
 {
-<<<<<<< HEAD
    public class EmployeesServices
-=======
-    public class EmployeesServices
->>>>>>> 4a577045b4508245c184983a09f489026d6daa84
+
     {
         private Repository<Employee> _EmployeeRepository;
 
@@ -21,23 +18,25 @@ namespace Services
             _EmployeeRepository = new Repository<Employee>();
         }
 
-        public IEnumerable<EmployeeDTO> GetAll()
+        public List<EmployeeDTO> GetAll()
             {
-            return _EmployeeRepository.Set().ToList().Select(c => new EmployeeDTO
-            {
-                EmployeeID = c.EmployeeID,
-                FirstName = c.FirstName,
-                LastName = c.LastName,
-                Country = c.Country,
-<<<<<<< HEAD
-                Shift = c.Shift,
-                ValorHora = c.ValorHora
 
+            var list = new List<EmployeeDTO>();
+
+            foreach (var c in _EmployeeRepository.Set())
+            {
+                list.Add(new EmployeeDTO
+                {
+                    EmployeeID = c.EmployeeID,
+                    FirstName = c.FirstName,
+                    LastName = c.LastName,
+                    Country = c.Country,
+                    Salary = c.Salary,
+                    ShiftID = c.Shift
+                });
                 
-=======
-                ShiftID = c.Shift
->>>>>>> 4a577045b4508245c184983a09f489026d6daa84
-            });
+            }
+            return list;
             }
 
         public EmployeeDTO Find(int employeeID)
@@ -49,8 +48,8 @@ namespace Services
                 FirstName = c.FirstName,
                 LastName = c.LastName,
                 Country = c.Country,
-                Shift = c.Shift,
-                ValorHora = c.ValorHora
+                ShiftID = c.Shift,
+                Salary = c.Salary
 
 
             }).FirstOrDefault(x => x.EmployeeID == employeeID);
@@ -70,7 +69,6 @@ namespace Services
                 Shift = dto.ShiftID,
                 Country = dto.Country,
                 HireDate = dto.HireDate,
-                ValorHora = dto.ValorHora,
                 Salary = dto.Salary
             });
 
@@ -94,10 +92,8 @@ namespace Services
             employee.Country = dto.Country;
             employee.Shift = dto.ShiftID;
             employee.HireDate = dto.HireDate;
-            employee.ValorHora = dto.ValorHora;
             employee.Salary = dto.Salary;
             
-
             _EmployeeRepository.Update(employee);
             _EmployeeRepository.SaveChanges();
 

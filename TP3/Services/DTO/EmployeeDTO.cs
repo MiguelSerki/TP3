@@ -20,10 +20,9 @@ namespace Services.DTO
         public string Country { get; set; }
 
         public DateTime? HireDate { get; set; }
+
         public double ValorHora { get; set; }
+
         public decimal Salary { get; set; }
-
-         
-
     }
 }
