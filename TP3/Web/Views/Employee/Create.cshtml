@@ -1,31 +1,29 @@
 ﻿
 <h2>Crear Empleado</h2>
 
-<form action="/Employee/Create" method="post">
-    <h3>ID</h3>
-    <input type="text" name="EmployeeID" />
+<form action="/Employee/Create" method="post" >
     
-    <h3>Nombre</h3>
-    <input type="text" name="FirstName"/>
+    <tag>Nombre</tag>
+    <input required type="text" name="FirstName"/>
 
-    <h3>Apellido</h3>
-    <input type="text" name="LastName"/>
+    <tag>Apellido</tag>
+    <input required type="text" name="LastName"/>
 
-    <h3>Pais</h3>
-    <input type="text" name="Country"/>
+    <tag>Pais</tag>
+    <input required type="text" name="Country"/>
 
-    <h3>Fecha de incorporacion</h3>
+    <tag>Fecha de incorporacion</tag>
     <input type="date" name="HireDate"/>
 
-    <h3>Turno</h3>
+    <tag>Turno</tag>
     <div class="radio"> 
-        <label><input type="radio" name="optradio">Option 1</label>
+        <label><input type="radio" name="ShiftID" value="1">Turno Mañana</label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="optradio">Option 2</label>
+        <label><input type="radio" name="ShiftID" value="2">Turno Tarde</label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="optradio">Option 3</label>
+        <label><input type="radio" name="ShiftID" value="3">Turno Noche</label>
     </div>
     <button type="submit" class="btn-default">Confirmar</button>
 </form>
