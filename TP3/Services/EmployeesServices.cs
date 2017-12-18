@@ -32,7 +32,8 @@ namespace Services
                     LastName = c.LastName,
                     Country = c.Country,
                     Salary = c.Salary,
-                    ShiftID = c.Shift
+                    ShiftID = c.Shift,
+                    HireDate = c.HireDate
                 });
                 
             }

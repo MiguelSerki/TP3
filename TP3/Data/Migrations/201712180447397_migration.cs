@@ -3,7 +3,7 @@ namespace Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class First : DbMigration
+    public partial class migration : DbMigration
     {
         public override void Up()
         {
@@ -11,23 +11,26 @@ namespace Data.Migrations
                 "dbo.Countries",
                 c => new
                     {
-                        CountryName = c.String(nullable: false, maxLength: 128),
+                        Id = c.Int(nullable: false, identity: true),
+                        CountryName = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.CountryName);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Employees",
                 c => new
                     {
                         EmployeeID = c.Int(nullable: false, identity: true),
+                        Shift = c.Int(nullable: false),
                         LastName = c.String(nullable: false, maxLength: 50),
                         FirstName = c.String(nullable: false, maxLength: 50),
                         Country = c.String(nullable: false),
                         HireDate = c.DateTime(),
-                        Shift_Id = c.Int(nullable: false),
+                        Salary = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Shift_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.EmployeeID)
-                .ForeignKey("dbo.Shifts", t => t.Shift_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Shifts", t => t.Shift_Id)
                 .Index(t => t.Shift_Id);
             
             CreateTable(
@@ -35,6 +38,7 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
                         Start = c.Int(nullable: false),
                         Finish = c.Int(nullable: false),
                     })

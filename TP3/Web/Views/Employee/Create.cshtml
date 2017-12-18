@@ -1,7 +1,10 @@
 ﻿
 <h2>Crear Empleado</h2>
 
-<form action="/Employee/Create" method="post" >
+
+<form class="form-group" action="/Employee/Create" method="post">
+    <h3>ID</h3>
+    <input type="text" name="EmployeeID" />
     
     <tag>Nombre</tag>
     <input required type="text" name="FirstName"/>
@@ -15,6 +18,8 @@
     <tag>Fecha de incorporacion</tag>
     <input type="date" name="HireDate"/>
 
+    <tag>Precio de Hora</tag>
+    <input type="number" name="Salary" />
     <tag>Turno</tag>
     <div class="radio"> 
         <label><input type="radio" name="ShiftID" value="1">Turno Mañana</label>
@@ -25,5 +30,13 @@
     <div class="radio">
         <label><input type="radio" name="ShiftID" value="3">Turno Noche</label>
     </div>
-    <button type="submit" class="btn-default">Confirmar</button>
+    <div>
+        <button style="background-color : dodgerblue; color : white" type="submit" class="btn-default">Confirmar</button>
+        <input  type="button" style="background-color : white; color : black" class="btn-default" onclick="location.href='/Employee/Details'" value="Cancelar" name="Cancelar" />
+    </div>
+
+  
+   
+    
+  
 </form>

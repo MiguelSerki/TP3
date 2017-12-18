@@ -1,0 +1,53 @@
+﻿@model List<Services.DTO.EmployeeDTO>
+
+<h2>Salario por Mes</h2>
+
+
+<div>
+
+    <form class="form-group" action="/Employee/Salary" method="post">
+
+        <h3>Seleccionar fecha</h3>
+
+        <input type="month" name="MonthSelector"/>
+
+        <div class="form-group">
+            <label for="Employee">Seleccionar Empleado</label>
+            <select name="employeeID" class="form-control" >
+                @foreach (var item in Model)
+            {
+                    <option>@item.FirstName @item.LastName</option>
+                }
+            </select>
+
+
+
+        </div>
+    </form>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Sueldo Total
+
+        </th>
+
+
+    </tr>
+
+    <tr>
+        @ViewBag.Calculo;
+    </tr>
+
+
+
+
+</table>
+
+
+
+
+
+
