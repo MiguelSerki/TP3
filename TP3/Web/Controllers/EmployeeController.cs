@@ -5,17 +5,18 @@ using System.Web;
 using System.Web.Mvc;
 using Services.DTO;
 using Services;
+using Web.Models;
 
 namespace Web.Controllers
 {
     public class EmployeeController : Controller
     {
         private EmployeesServices _EmployeesServices;
+        private CalculateMonthServices _CalculateMonthServices;
+        
 
-        public EmployeeController()
-        {
-            _EmployeesServices = new EmployeesServices();
-        }
+
+        
            
         public ActionResult Details()
         {
@@ -37,7 +38,7 @@ namespace Web.Controllers
         }
 
 
-        //Problemas al devolver employee(Devuelve ID valor 0). solucionar.
+        
         public ActionResult Update(int EmployeeID)
         {
             var EmployeeDto = _EmployeesServices.Find(EmployeeID);
@@ -57,10 +58,29 @@ namespace Web.Controllers
         }
 
 
+        public ActionResult Salary()
+        {
+             
+            return View(_EmployeesServices.GetAll());
+          
+        }
+
+        [HttpPost]
+        public ActionResult Salary(int employeeID)
+        {
+            ViewBag.Calculo = _CalculateMonthServices.CalculoSueldoMes(employeeID);
+            return View();
+        }
+
+        
 
 
-        //Listo
-        public ActionResult Delete(int EmployeeID)
+
+
+
+
+
+            public ActionResult Delete(int EmployeeID)
         {
             _EmployeesServices.Delete(new EmployeeDTO
             {

@@ -1,9 +1,7 @@
 ﻿@model List<Services.DTO.EmployeeDTO>
 
 <h2>Detalles de Empleado:</h2>
-@{
-    ViewBag.Title = "Details";
-}
+
 
     <h2>Details</h2>
     <table class="table">
@@ -23,14 +21,13 @@
                 <td>@item.Country</td>
                 <td>@item.HireDate</td>
                 <td>@item.ShiftID</td>
-                <td>@item.ValorHora</td>
+                <td>@item.Salary</td>
                 <td>
-                    <a href="/Employee/Delete?EmployeeID=@item.EmployeeID">Eliminar</a>
-                    <a href="/Employee/Update?EmployeeID=@item.EmployeeID">Actualizar</a>
+                    <a class="btn-default" style="border-style : solid; border-color : dodgerblue  ; background-color :dodgerblue; color :white" href="/Employee/Delete?EmployeeID=@item.EmployeeID">Eliminar</a>
+                    <a class="btn-default" style="border-style : solid; border-color : dodgerblue; background-color :dodgerblue; color :white" href="/Employee/Update?EmployeeID=@item.EmployeeID">Actualizar</a>
                 </td>
             </tr>
-//<td><form action="/Employee/Edit" method="post"><button type="submit" value="@item.EmployeeID" id="edit" class="form-group">Editar</button></form></td>
-//<td><form action="/Employee/Delete" method="post"><button type="submit" value="@item.EmployeeID" id="delete" class="form-group">Borrar</button></form></td>
+
 
         }
     </table>

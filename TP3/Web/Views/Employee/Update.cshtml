@@ -1,53 +1,43 @@
 ﻿@model Services.DTO.EmployeeDTO
 
-<form action="/Employee/Update" method="post">
-    <div>
-        <label>
-            ID
-        </label>
-        <input readonly value="@Model.EmployeeID" type="number" name="EmployeeID"/>
-    </div>
-    <div>
-        <label>
-            Nombre Empleado
-        </label>
-        <input type="text" name="FirstName"/>
-    </div>
-    <div>
+<form class="form-group" action="/Employee/Update" method="post">
+ 
+      
+     <h3>ID</h3> 
+    <input readonly value="@Model.EmployeeID" type="number" name="EmployeeID" />  
+  
+    
 
-        <label>
-            Apellido Empleado
-        </label>
-        <input type="text" name="LastName"/>
+    <h3>Nombre</h3>
+    <input type="text" name="FirstName" />
+
+    <h3>Apellido</h3>
+    <input type="text" name="LastName" />
+
+    <h3>Pais</h3>
+    <input type="text" name="Country" />
+
+    <h3>Fecha de incorporacion</h3>
+    <input type="date" name="HireDate" />
+
+    <h3>Precio de Hora</h3>
+    <input type="number" name="Salary" />
+
+
+    <h3>Turno</h3>
+    <div class="radio">
+        <label><input type="radio" name="optradio">Option 1</label>
+    </div>
+    <div class="radio">
+        <label><input type="radio" name="optradio">Option 2</label>
+    </div>
+    <div class="radio">
+        <label><input type="radio" name="optradio">Option 3</label>
     </div>
     <div>
-        <label>
-            Turno
-        </label>
-        <input type="number" name="Shift"/>
-    </div>
-    <div>
-        <label>
-            Pais
-        </label>
-        <input type="text" name="Country" />
-    </div>
-    <div>
-        <label>
-            Fecha de contratacion
-        </label>
-        <input type="datetime" name="HireDate" />
-    </div>
-    <div>
-        <label>
-            Valor Hora
-        </label>
-        <input type="number" name="ValorHora" />
+        <button style="background-color : dodgerblue; color : white" type="submit" class="btn-default">Confirmar</button>
+        <input type="button" style="background-color : white; color : black" class="btn-default" onclick="location.href='/Employee/Details'" value="Cancelar" name="Cancelar" />
     </div>
 
-    <div>
-
-        <button type="submit">Guardar</button>
-    </div>
-
+  
 </form>
