@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Services;
+using Services.DTO;
 
 namespace Web.Controllers
 {
@@ -30,6 +31,17 @@ namespace Web.Controllers
         }
 
         public ActionResult ShiftMenu()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult WorkingDay(EmployeeDTO employee)
+        {
+            return View(employee);
+        }
+
+        public ActionResult WorkingDay()
         {
             return View();
         }
