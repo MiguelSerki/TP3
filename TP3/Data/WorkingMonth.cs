@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class Country
+    public class WorkingMonth
     {
         [Key]
-        public int Id { get; set; }
+        public int ID { get; set; }
 
         [Required]
-        public string CountryName { get; set; }
+        public int Month { get; set; }
+
+        [Required]
+        public List<WorkingDay>List { get; set; }
     }
 }

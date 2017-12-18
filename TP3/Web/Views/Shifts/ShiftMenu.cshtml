@@ -1,0 +1,31 @@
+﻿@model List<Services.DTO.EmployeeDTO>
+@{
+    ViewBag.Title = "ShiftView";
+}
+
+<h2>ShiftView</h2>
+
+<div>
+    <tag>Lista de empleados</tag>
+    <table class="table" >
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Pais</th>
+            <th>Fecha de contratacion</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.EmployeeID</td>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Country</td>
+            <td>@item.HireDate</td>
+            <td>@item.Salary</td>
+            <td><form action="/Shifts/WorkingDay" method="post"><button name="employee" value="@item" class="btn-group">Entrada/Salida</button></form></td>
+        </tr>
+        }
+    </table>
+</div>

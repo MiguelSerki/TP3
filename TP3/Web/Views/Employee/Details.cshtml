@@ -1,25 +1,35 @@
-﻿@model List<Services.EmploteeDTO> //Miguel del futuro! checkea el namespace
+﻿@model List<Services.DTO.EmployeeDTO>
+
+<h2>Detalles de Empleado:</h2>
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-<table>
-    <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Pais</th>
-        <th>Fecha de ingreso</th>
-        <th>Turno</th>
-    </tr>
-    @foreach (var item in Model) //fijate el turno y la fecha de ingreso
-    {
+    <h2>Details</h2>
+    <table class="table">
         <tr>
-            <td>item.FirstName</td>
-            <td>item.LastName</td>
-            <td>item.Country</td>
-            <td>item.Fechadeingreso</td>
-            <td>item.Shift</td>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Pais</th>
+            <th>Fecha de ingreso</th>
+            <th>Turno</th>
+            <th>Valor de Hora</th>
         </tr>
-    }
-</table>
+        @foreach (var item in this.Model)
+        {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Country</td>
+                <td>@item.HireDate</td>
+                <td>@item.ShiftID</td>
+                <td>@item.ValorHora</td>
+                <td>
+                    <a href="/Employee/Delete?EmployeeID=@item.EmployeeID">Eliminar</a>
+                    <a href="/Employee/Update?EmployeeID=@item.EmployeeID">Actualizar</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+   <button  class="bg-success">Crear nuevo</button>

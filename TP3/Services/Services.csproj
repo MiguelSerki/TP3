@@ -45,7 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculateMonthServices.cs" />
+    <Compile Include="CountryServices.cs" />
+    <Compile Include="DTO\CountryDTO.cs" />
+    <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\ShiftDTO.cs" />
+    <Compile Include="DTO\WorkingDayDTO.cs" />
+    <Compile Include="DTO\WorkingMonthDTO.cs" />
+    <Compile Include="EmployeesServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShiftServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

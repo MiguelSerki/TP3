@@ -1,0 +1,53 @@
+﻿@model Services.DTO.EmployeeDTO
+
+<form action="/Employee/Update" method="post">
+    <div>
+        <label>
+            ID
+        </label>
+        <input readonly value="@Model.EmployeeID" type="number" name="EmployeeID"/>
+    </div>
+    <div>
+        <label>
+            Nombre Empleado
+        </label>
+        <input type="text" name="FirstName"/>
+    </div>
+    <div>
+
+        <label>
+            Apellido Empleado
+        </label>
+        <input type="text" name="LastName"/>
+    </div>
+    <div>
+        <label>
+            Turno
+        </label>
+        <input type="number" name="Shift"/>
+    </div>
+    <div>
+        <label>
+            Pais
+        </label>
+        <input type="text" name="Country" />
+    </div>
+    <div>
+        <label>
+            Fecha de contratacion
+        </label>
+        <input type="datetime" name="HireDate" />
+    </div>
+    <div>
+        <label>
+            Valor Hora
+        </label>
+        <input type="number" name="ValorHora" />
+    </div>
+
+    <div>
+
+        <button type="submit">Guardar</button>
+    </div>
+
+</form>

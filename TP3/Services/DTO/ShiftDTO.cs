@@ -1,24 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Data
+namespace Services.DTO
 {
-    public class Shift
+    public class ShiftDTO
     {
-        [Key]
         public int Id { get; set; }
 
-        [Required]
         public string Name { get; set; }
 
-        [Required]
         public DateTimeKind Start { get; set; }
 
-        [Required]
         public DateTimeKind Finish { get; set; }
 
-        [Required]
-        public List<Employee> EmployeeList { get; set; }
+        public List<EmployeeDTO> EmployeeList { get; set; }
     }
 }

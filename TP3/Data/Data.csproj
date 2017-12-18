@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -56,10 +56,40 @@
     <Compile Include="Migrations\201712121535279_First.Designer.cs">
       <DependentUpon>201712121535279_First.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712122223220_Second.cs" />
+    <Compile Include="Migrations\201712122223220_Second.Designer.cs">
+      <DependentUpon>201712122223220_Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712131537416_Third.cs" />
+    <Compile Include="Migrations\201712131537416_Third.Designer.cs">
+      <DependentUpon>201712131537416_Third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712141507319_Fourth.cs" />
+    <Compile Include="Migrations\201712141507319_Fourth.Designer.cs">
+      <DependentUpon>201712141507319_Fourth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712151636022_FourthPointTwo.cs" />
+    <Compile Include="Migrations\201712151636022_FourthPointTwo.Designer.cs">
+      <DependentUpon>201712151636022_FourthPointTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712151535481_Fifth.cs" />
+    <Compile Include="Migrations\201712151535481_Fifth.Designer.cs">
+      <DependentUpon>201712151535481_Fifth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712152240245_Sixth.cs" />
+    <Compile Include="Migrations\201712152240245_Sixth.Designer.cs">
+      <DependentUpon>201712152240245_Sixth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712162154379_Seventh.cs" />
+    <Compile Include="Migrations\201712162154379_Seventh.Designer.cs">
+      <DependentUpon>201712162154379_Seventh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Shift.cs" />
+    <Compile Include="WorkingDay.cs" />
+    <Compile Include="WorkingMonth.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -68,6 +98,27 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712121535279_First.resx">
       <DependentUpon>201712121535279_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712122223220_Second.resx">
+      <DependentUpon>201712122223220_Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131537416_Third.resx">
+      <DependentUpon>201712131537416_Third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141507319_Fourth.resx">
+      <DependentUpon>201712141507319_Fourth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712151636022_FourthPointTwo.resx">
+      <DependentUpon>201712151636022_FourthPointTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712151535481_Fifth.resx">
+      <DependentUpon>201712151535481_Fifth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712152240245_Sixth.resx">
+      <DependentUpon>201712152240245_Sixth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712162154379_Seventh.resx">
+      <DependentUpon>201712162154379_Seventh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

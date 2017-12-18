@@ -1,36 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data;
 
-namespace Data
+namespace Services.DTO
 {
-    public partial class Employee
-
-        
+    public class EmployeeDTO
     {
-        [Key]
         public int EmployeeID { get; set; }
 
-        [Required]
-        public int Shift { get; set; }
+        public int ShiftID { get; set; }
 
-        [Required]
-        [StringLength(50)]
         public string LastName { get; set; }
 
-        [Required]
-        [StringLength(50)]
         public string FirstName { get; set; }
 
-        [Required]
         public string Country { get; set; }
 
         public DateTime? HireDate { get; set; }
 
-        [Required]
         public decimal Salary { get; set; }
     }
 }
